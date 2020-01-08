@@ -1,0 +1,152 @@
+import numpy as np
+
+# 1. Get the characteristics of numpy array
+ar = np.array([[1, 2, 3], [4, 5, 6]])
+print(ar)
+print(ar.shape)
+print(type(arr))
+print(ar.dtype)
+print(ar.ndim)
+
+# 2. Create an array from a regular python list or tuple
+arr = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr)
+
+arr = np.array((1, 2, 3, 4, 5, 6))
+print(arr)
+
+# 3. Create arrays with initial placeholder content
+arr = np.ndarray(shape=(2, 2), dtype=float, order='J')
+print(arr)
+
+# 4. Create sequence of numbers
+arr = np.arange(0, 50)
+print(arr)
+
+# 5. Return evenly spaces values in array within a given interval
+arr = np.arange(0, 50, 2)
+print(arr)
+
+# 6. Extract all odd numbers from arr
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(arr[1::2])
+
+# 7. Replace all odd numbers in arr with -1
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr[arr % 2 == 1] = -1
+print(arr)
+
+# 8. Replace all odd numbers in arr with -1 without changing arr
+arr = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr_copy = arr.copy()
+arr[arr % 2 == 1] = -1
+print('Modified: ')
+print(arr)
+print('Original: ')
+print(arr_copy)
+
+
+
+gui
+1.)
+from tkinter import *
+
+jj = Tk()
+
+jj.title("Welcome to mca dept")
+
+jj.geometry('350x200')
+
+lbl = Label(jj, text="Hello")
+
+lbl.grid(column=0, row=0)
+
+btn = Button(jj, text="Click Me")
+
+btn.grid(column=1, row=0)
+
+jj.mainloop()
+2.)
+from tkinter import *
+
+jj = Tk()
+
+jj.title("Welcome to MCA dept")
+
+jj.geometry('350x200')
+
+lb1 = Label(jj, text="Hello")
+
+lb1.grid(column=0, row=0)
+
+
+def clicked():
+    lb1.configure(text="Button was clicked !!")
+
+
+btn = Button(jj, text="Click Me", command=clicked)
+
+btn.grid(column=1, row=0)
+
+
+jj.mainloop()
+
+3.)
+from tkinter import *
+from tkinter import Menu
+window = Tk()
+window.title("Welcome to mca dept")
+menu = Menu(window)
+new_item = Menu(menu)
+new_item.add_command(label='New')
+new_item.add_separator()
+menu.add_cascade(label='File', menu=new_item)
+window.config(menu=menu)
+window.mainloop()   
+
+
+4.)
+root = Tk() 
+root.configure(background='light green') 
+root.title("registration form") 
+root.geometry("500x300") 
+
+heading = Label(root, text="Form", bg="light green") 
+name = Label(root, text="Name", bg="light green") 
+course = Label(root, text="Course", bg="light green") 
+sem = Label(root, text="Semester", bg="light green") 
+form_no = Label(root, text="Form No.", bg="light green") 
+contact_no = Label(root, text="Contact No.", bg="light green") 
+email_id = Label(root, text="Email id", bg="light green") 
+address = Label(root, text="Address", bg="light green") 
+
+heading.grid(row=0, column=1) 
+name.grid(row=1, column=0) 
+course.grid(row=2, column=0) 
+sem.grid(row=3, column=0) 
+form_no.grid(row=4, column=0) 
+contact_no.grid(row=5, column=0) 
+email_id.grid(row=6, column=0) 
+address.grid(row=7, column=0) 
+
+name_field = Entry(root) 
+course_field = Entry(root) 
+sem_field = Entry(root) 
+form_no_field = Entry(root) 
+contact_no_field = Entry(root) 
+email_id_field = Entry(root) 
+address_field = Entry(root) 
+
+name_field.grid(row=1, column=1, ipadx="100") 
+course_field.grid(row=2, column=1, ipadx="100") 
+sem_field.grid(row=3, column=1, ipadx="100") 
+form_no_field.grid(row=4, column=1, ipadx="100") 
+contact_no_field.grid(row=5, column=1, ipadx="100") 
+email_id_field.grid(row=6, column=1, ipadx="100") 
+address_field.grid(row=7, column=1, ipadx="100") 
+
+submit = Button(root, text="Submit", fg="Black", 
+                        bg="Red") 
+submit.grid(row=8, column=1) 
+
+root.mainloop()

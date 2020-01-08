@@ -1,0 +1,234 @@
+1. find largest of three numbers:
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+
+if (num1 > num2) and (num1 > num3):
+    print("largest is num1", num1)
+elif  (num2 > num1) and (num2 > num3):
+    print("largest is num2", num2)
+else:
+    print("largest is num3", num3)
+
+output:
+Enter first number: 25
+Enter second number: 45
+Enter third number: 75
+largest is num3 75.0
+
+2.find smallest of three numbers:
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+num3 = float(input("Enter third number: "))
+
+if (num1 < num2) and (num1 < num3):
+    print("smallest is num1", num1)
+elif  (num2 < num1) and (num2 < num3):
+    print("smallest is num2", num2)
+else:
+    print("smallest is num3", num3)
+
+output:
+Enter first number: 41
+Enter second number: 74
+Enter third number: 10
+smallest is num3 10.0
+
+3.Read the list of fruits and perform the following:
+If number of fruits are more than 4, add one more fruit and display 'EXCELLENT'. If banana is
+in list, change any one fruit and display 'GOOD'. If apple is in list, delete any one fruit and
+display 'AVERAGE' otherwise 'BAD'
+
+fruits = list(('apple','banana','orange','grapes','mango'))
+a = 0
+print(fruits)
+if len(fruits)>4:
+    fruits.append('blackgrape')
+    print("excellent")
+    print(fruits)
+
+for i in fruits:
+    if i == 'banana':
+        fruits[len(fruits)-1] = 'papaya'
+        print("good")
+        print(fruits)
+
+        for i in fruits:
+            if i == 'apple':
+                a = 1
+                del fruits[len(fruits)-1]
+                print("average")
+                print(fruits)
+                if a == 0:
+                    print("bad")
+
+
+output:
+['apple', 'banana', 'orange', 'grapes', 'mango']
+excellent
+['apple', 'banana', 'orange', 'grapes', 'mango', 'blackgrape']
+good
+['apple', 'banana', 'orange', 'grapes', 'mango', 'papaya']
+average
+['apple', 'banana', 'orange', 'grapes', 'mango']
+
+
+
+4.Read a variable, find whether it is number or string. If it is a string whether it is in upper case,
+lower case or something else.
+
+val = input("enter the val")
+
+if (val.isalpha()):
+    print("it is string")
+else:
+    if (val.isupper()):
+        print("it is in uppercase")
+    elif (val.islower()):
+        print("it is in lowercase")
+    else:
+        print("smthng else")
+
+OUTPUT:
+
+Enter any variable: jeev
+String has lower case
+
+
+
+5. find those numbers whic are divisible by 9 and multiples of 5:
+
+num = int(input("Enter range:"))
+	for val in range(5,num,5):
+    		if(val%9==0):
+        		print(val)
+
+Enter range:200
+45
+90
+135
+180
+
+6. Display the multiplication table from 1 to n in the form 1*1 = 1 ……
+
+num = int(input("Enter value of n:"))
+for a in range(1,n+1,1):
+    for b in range(1,11):
+        print(a,"*",a,"=",a*b)
+output:
+Enter value of n:2
+1 * 1 = 1
+1 * 2 = 2
+1 * 3 = 3
+1 * 4 = 4
+1 * 5 = 5
+1 * 6 = 6
+1 * 7 = 7
+1 * 8 = 8
+1 * 9 = 9
+1 * 10 = 10
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+
+7. Display depending on the number of rows.
+  n=int(input("Enter no of rows:"))
+for i in range(0, n):
+   for j in range(0, i+1):
+      print("* ",end="")
+      print()
+for a in range(0,n):
+    for b in range(n-1, a,-1):
+        print("* ",end="")
+         print()
+
+8.Read a list of numbers and display the even numbers and odd numbers separately. Sum the
+even numbers and odd numbers and display the same.
+
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+    b=int(input("Enter element:"))
+    a.append(b)
+even=[]
+odd=[]
+for j in a:
+    if(j%2==0):
+        even.append(j)
+    else:
+        odd.append(j)
+print("The even list",even)
+print("The odd list",odd)
+
+output:
+Enter number of elements:6
+Enter element:45
+Enter element:65
+Enter element:58
+Enter element:78
+Enter element:74
+Enter element:21
+The even list [58, 78, 74]
+The odd list [45, 65, 21]
+
+
+9.Read a list of numbers and display the numbers whose sum of individual digits is an even
+number
+
+list = [10,11,12,13,14,15,16]
+result = 0
+for i in list:
+    if not i % 2:
+          result += i
+print(result)
+
+output:
+52
+
+
+10. Check whether an alphabet of a string inputted by the user is a vowel or consonant.
+j = input("Input a letter of the alphabet: ")
+
+if j in ('a', 'e', 'i', 'o', 'u'):
+    print("%s is a vowel." % j)
+else:
+    print("%s is a consonant." % j)
+
+output:
+Input a letter of the alphabet: v
+v is a consonant.
+
+11.Check whether a string inputted by the user is representing an integer or not.
+num = input("Enter the value:")
+	if(num.isnumeric()):
+    		print("it is an integer.")
+	else:
+    		print("It is not integer.")
+
+
+OUTPUT:
+Enter the value: 25
+it is an integer
+
+12.Display depending on the number of rows.
+
+n=int(input("Enter no of rows:"))
+for i in range(0, n):
+    for j in range(0, i+1):
+     print("* ",end="")
+    print()
+
+output:
+Enter no of rows:3
+* 
+* * 
+* * * 

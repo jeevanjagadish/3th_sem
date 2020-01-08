@@ -1,0 +1,224 @@
+#problem1
+class distance:
+    count = 0
+    def __init__(self):
+        distance.count +=1
+
+    def getdistance(self):
+        self.a = float(input("enter the distance"))
+        self.b = float(input("enter the distance"))
+
+
+    def add_distance(self):
+        self.total = self.a + self.b
+        self.total1 = divmod(self.total,1)
+
+    def show_distance(self):
+        print("1st dis",self.a)
+        print("2nd dis",self.b)
+        print("total distance",round(self.total1[0]),round(self.total1[1]*1000),"mts")
+
+d=distance()
+d.getdistance()
+d.add_distance()
+d.show_distance()'''
+
+
+
+
+#problem2
+class time:
+    def __init__(self,sec):
+        self.sec = sec
+
+    def a(self):
+        self.min,self.sec = divmod(self.sec,60)
+        self.hrs,self.min = divmod(self.min,60)
+        print(self.a,"hours",self.min,"min",self.sec,"sec")
+
+s = int(input("enter the sec"))
+t = time(s)
+t.a()
+
+
+
+#program3
+class Student:
+    count = 0
+    def __init__(self):
+        Student.count = Student.count+1
+    def stuDetail(self):
+        self.name = input("Enter name of student:")
+        self.srn = input("Enter SRN of student:")
+        self.gender = input("Enter gender of student:")
+class Stud_res(Student):
+        
+    def marksDetail(self):
+        Student.stuDetail(self)
+        self.isa = float(input("Enter ISA marks:"))
+        self.esa = float(input("Enter ESA marks:"))
+        self.sgpa = float(input("Enter SGPA of:"))
+        self.cgpa = float(input("Enter CGPA of:"))
+    def showDetail(self):
+        print("Student Details are as follows:-")
+        print("Name:",self.name)
+        print("SRN:",self.srn)
+        print("Gender:",self.gender)
+        print("ISA Marks:",self.isa)
+        print("ESA Marks:",self.esa)
+        print("SGPA Marks:",self.sgpa)
+        print("CGPA Marks:",self.cgpa)
+
+s1 = Stud_res()
+s1.marksDetail()
+print(s1.showDetail())
+
+#program4
+class Basic_Info:
+    def getData(self):
+        self.name = input("Enter name:")
+        self.id = input("Enter ID:")
+        self.age = input("Enter age:")
+        self.gender = input("Enter gender:")
+class Dept_Info:
+    def deptDetail(self):
+        self.dept_name = input("Enter Dept name:")
+        self.assigned_work = input("Enter assigned work:")
+        self.time_comp = input("Enter time needed for completion:")
+class Employee(Basic_Info,Dept_Info):
+    def EmpDetail(self):
+        Basic_Info.getData(self)
+        Dept_Info.deptDetail(self)
+    def showDetail(self):
+        print("\nEMPLOYEE DETAILS:\n")
+        print("Employee Name:",self.name)
+        print("Employee ID:",self.id)
+        print("Employee age:",self.age)
+        print("Employee gender:",self.gender)
+        print("Employee Department:",self.dept_name)
+        print("Employee assigned_work:",self.assigned_work)
+        print("Time neeed to complete it:",self.time_comp)
+E1 = Employee()
+E1.EmpDetail()
+E1.showDetail()
+
+
+#program5
+class bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if self.balance - amount < 0:
+            return "withdraw not possible"
+        else:
+            self.balance = self.balance - amount
+            return "{}withdraw. new  balance is {}".format(amount,self.balance)
+
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        return "{} desposit. new balance is {}".format(amount,self.balance)
+    def checkbalance(self):
+        return "balance is {}".format(self.balance)'''
+ch =1
+a= bank(10000)
+while ch < 4:
+    ch = int(input("1.withdraw 2.desposit 3.check bal"))
+    if ch in [1,2,3]:
+        if ch is 1:
+            v = float(input("enter the withdraw amount"))
+            print(a.withdraw(v))
+        elif ch is 2:
+            b = float(input("enter deposit amt"))
+            print(a.deposit(b))
+        elif ch is 3:
+            print(a.checkbalance())
+        else:
+            print("plz enter 1,2 or 3")
+
+#problem6
+class Complex:
+    def __init__(self, real, imag=0.0):
+        self.real = real
+        self.imag = imag
+
+    def __mul__(self, other):
+        return Complex(self.real*other.real - self.imag*other.imag,
+                       self.imag*other.real + self.real*other.imag)
+
+    def __truediv__(self, other):
+        self.real, self.imag, other.real, other.imag = self.real, self.imag, \
+                         other.real, other.imag # short forms
+        r = float(other.real ** 2 + other.imag**2)
+        return Complex((self.real*other.real+self.imag*other.imag)/r, (self.real*other.real-self.real*other.imag)/r)
+
+
+a = Complex(3, 4)
+b = Complex(2, 1)
+print(a * b)
+print(a / b)
+
+#problem8
+class Shape:
+    get_color = ""
+    set_color = ""
+    def __init__(self, get_color, set_color = "black"):
+        self.get_color = get_color
+        self.set_color = set_color
+
+    def print(self):
+        print("The border color is : {}".format(self.set_color))
+
+class Rectangle(Shape):
+    get_length = ""
+    get_breadth = ""
+    set_length = ""
+    set_breadth = ""
+    get_area = ""
+    get_perimeter = ""
+
+    def __init__(self, get_length, get_breadth):
+        self.get_length = get_length
+        self.get_breadth = get_breadth
+        self.set_length = self.get_length
+        self.set_breadth = self.get_breadth
+
+        self.get_area = self.set_length * self.set_breadth
+        self.get_perimeter = 2 * (self.set_length + self.set_breadth)
+
+    def area(self):
+        print("Area of rectangle is : {}".format(self.get_area))
+
+    def perimeter(self):
+        print("Perimeter of rectangle is : {}".format(self.get_perimeter))
+
+class Circle(Rectangle):
+    get_radius = ""
+    set_radius = ""
+    get_area = ""
+    get_perimeter = ""
+
+    def __init__(self, get_radius):
+        self.get_radius = get_radius
+        self.set_radius = self.get_radius
+        self.get_area = 3.142 * self.set_radius * self.set_radius
+        self.get_perimeter = 2 * 3.142 * self.set_radius
+
+    def circleArea(self):
+        print("Area of circle is : {}".format(self.get_area))
+
+    def circlePerimeter(self):
+        print("Area of perimeter is : {}".format(self.get_perimeter))
+
+c1 = Shape("red")
+c1.print()
+
+a1 = Rectangle(10,20)
+a1.area()
+a1.perimeter()
+
+b1 = Circle(5)
+b1.circleArea()
+b1.circlePerimeter()
+
+
